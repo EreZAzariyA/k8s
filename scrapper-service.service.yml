@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bank-scrapper-service
+spec:
+  selector:
+    app: bank-scrapper-service
+  ports:
+    - protocol: TCP
+      port: 5002  # Expose microservice1 on port 5001 internally
+      targetPort: 5002
+  type: ClusterIP
